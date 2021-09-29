@@ -1,0 +1,4 @@
+1. menu master data dibuat card
+2. menu product belum dibuat
+6. form dibuat kesamping
+7. Material Code di menu BOM dibuat semacam checkbox

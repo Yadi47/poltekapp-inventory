@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>READ OPC DA</title>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<script src="https://cdn.socket.io/4.0.0/socket.io.min.js" integrity="sha384-DkkWv9oJFWLIydBXXjkBWnG1/fuVhw8YPBq37uvvD6WSYRFRqr21eY5Dg9ZhmWdy" crossorigin="anonymous"></script>
+    <style>
+        #table {
+            font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        #table td,
+        #table th {
+            border: 1px solid #ddd;
+            padding: 8px;
+        }
+
+        #table tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        #table tr:hover {
+            background-color: #ddd;
+        }
+
+        #table th {
+            padding-top: 12px;
+            padding-bottom: 12px;
+            text-align: left;
+            background-color: #4CAF50;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <table id="table">
+        <thead>
+            <tr>
+                <th>no</th>
+                <th>Group</th>
+                <th>Value</th>
+                <th>Response</th>
+            </tr>
+        </thead>
+        <tbody id="value"></tbody>
+    </table>
+    <script>
+
+        const socket = io('http://localhost:8080');
+        socket.on('connect', function () {
+            console.log("CONNECT")
+        })
+                            // <td> <pre id="json">${JSON.stringify(element, undefined, 2)}</pre></td>
+        function saveData(data){
+            axios.post('http://localhost:81/jpa-oee/public/api/saveOpc', data)
+            .then(function (response) {
+                console.log(response);
+            })
+            .catch(function (error) {
+                console.log(error);
+            });
+        }
+        socket.on('realtime', (data) => {
+            console.log(data)
+            data = data.response
+            let tr = '';
+            let no = 1;
+            saveData(data);
+            for (const key in data) {
+                if (data.hasOwnProperty(key)) {
+                    const element = data[key];
+
+                    tr += `<tr>
+                            <td> ${no++}</td>
+                            <td> ${data[key][0]}</td>
+                            <td> ${data[key][1]}</td>
+                            <td> <pre id="json">${data[key][2]}</pre></td>
+                        </tr>`;
+                }
+            }
+            document.getElementById("value").innerHTML = tr;
+        })
+    </script>
+</body>
+
+</html>

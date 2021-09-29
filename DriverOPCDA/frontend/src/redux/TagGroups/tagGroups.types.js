@@ -1,0 +1,2 @@
+export const SET_TAG_GROUP = 'SET_TAG_GROUP' 
+export const SET_TAG_GROUP_TAGS = 'SET_TAG_GROUP_TAGS'

@@ -1,0 +1,546 @@
+{
+	"info": {
+		"_postman_id": "4168482e-adc3-4737-b85c-bb1a611019bf",
+		"name": "NxaTankvision",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "FrontEnd",
+			"item": [
+				{
+					"name": "user",
+					"item": [
+						{
+							"name": "user_get_all",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/users",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"users"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "user_store",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"Email\": \"ardhiramadhan98@gmail.com\",\r\n    \"UserName\": \"ardhir10\",\r\n    \"Name\": \"Ardhi Ramadhan\",\r\n    \"Password\": \"rama123\",\r\n    \"Avatar\": null,\r\n    \"RoleId\": 3\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/users",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"users"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "user_get_one",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"url": {
+									"raw": "localhost:3000/users/1",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"users",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "user_update",
+							"request": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"Email\": \"halo@gmail.com\",\r\n    \"UserName\": \"halo\",\r\n    \"Name\": \"Halo Ramadhan\",\r\n    \"Avatar\": 123,\r\n    \"RoleId\": 3\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/users/2",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"users",
+										"2"
+									],
+									"query": [
+										{
+											"key": "asdasd",
+											"value": "232ss",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "user_delete",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/users/2",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"users",
+										"2"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "role",
+					"item": [
+						{
+							"name": "role_get_all",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/roles",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"roles"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "role_store",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"RoleName\" : \"Admin\",\r\n    \"Description\" : \"Desc of role admin\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:3000/roles",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"roles"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "role_get_one",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"url": {
+									"raw": "localhost:3000/roles/2",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"roles",
+										"2"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "role_update",
+							"request": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"RoleName\" : \"Operator\",\r\n    \"Description\" : \"Desc of role operator\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:3000/roles/2",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"roles",
+										"2"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "role_delete",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "localhost:3000/roles/3",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"roles",
+										"3"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "tag_group",
+					"item": [
+						{
+							"name": "tag_group_get_all",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/tag-groups",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"tag-groups"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "tag_group_store",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"TagGroupName\" : \"TANK01\",\r\n    \"TagTableName\" : \"Tankvision_table\",\r\n    \"TagGroupServer\" : \"Tankvision_OPCSERVER\",\r\n    \"Description\" : \"Tank 1 Description\",\r\n    \"Status\" : true\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/tag-groups",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"tag-groups"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "tag_group_get_one",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/tag-groups/2",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"tag-groups",
+										"2"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "tag_group_update",
+							"request": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"TagGroupName\" : \"TANK01\",\r\n    \"TagTableName\" : \"Tankvision1_table\",\r\n    \"TagGroupServer\" : \"Tankvision1_OPCServer\",\r\n    \"Description\" : \"Tank 1 Description\",\r\n    \"Status\" : true\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/tag-groups/1",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"tag-groups",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "tag_group_delete",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/tag-groups/3",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"tag-groups",
+										"3"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "tag_group_by_status",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/tag-groups/status/0",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"tag-groups",
+										"status",
+										"0"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "tag",
+					"item": [
+						{
+							"name": "tag_get_all",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/tags",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"tags"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "tag_store",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"TagName\": \"TEMPERATURE 2\",\r\n    \"ColumnName\": \"temp2\",\r\n    \"TagAddress\" : \"TS-02\",\r\n    \"Status\" : true,\r\n    \"StaticValue\" : null,\r\n    \"TagGroupId\" : 1\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/tags",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"tags"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "tag_delete",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/tags/4",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"tags",
+										"4"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "tag_get_one",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/tags/7",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"tags",
+										"7"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "tag_update",
+							"request": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n        \"TagName\": \"column2\",\r\n        \"ColumnName\": \"column2\",\r\n        \"TagAddress\": \"TX10\",\r\n        \"Status\": false,\r\n        \"StaticValue\": 0,\r\n        \"TagGroupId\": 1\r\n    }",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/tags/7",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"tags",
+										"7"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Database",
+			"item": [
+				{
+					"name": "database_sync",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{url}}/database/sync",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"database",
+								"sync"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Websocket",
+			"item": [
+				{
+					"name": "getServers",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/websocket/getServers",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"websocket",
+								"getServers"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

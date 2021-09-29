@@ -1,0 +1,34 @@
+swagger: "2.0"
+info:
+  title: Sample API
+  description: API description in Markdown.
+  version: 1.0.0
+host: localhost:3000
+basePath: /v1
+schemes:
+  - http
+parameters:
+securityDefinitions:
+  basicAuth:
+    type: basic
+  Authorization:
+    type: apiKey
+    in: header
+    name: Api-Key
+    description: All requests must include the `Authorization` header containing your account ID.
+# Apply the "X-ACCOUNT" header globally to all paths and operations
+security:
+  - Authorization: []
+  - basicAuth: []
+paths:
+  /user:
+    get:
+      summary: Returns a list of users.
+      tags:
+        - User
+      # description: Optional extended description in Markdown.
+      produces:
+        - application/json
+      responses:
+        200:
+          description: OK

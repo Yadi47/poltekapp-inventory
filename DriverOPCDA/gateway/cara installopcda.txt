@@ -1,0 +1,11 @@
+MatrikonBrowse and Simulation untuk development
+Install python-3.9.2.exe (Python32Bit Wajib) (C:\Users\RAMA\AppData\Local\Programs\Python)
+Install PYWIN32 (Versi sesuaikan versi python) https://github.com/mhammond/pywin32/releases
+DOWNLOAD AND REGISTER THE DLL (http://www.gray-box.net/download_daawrapper.php)
+Extract (graybox_opc_automation_wrapper.zip) 
+Command: regsvr32 gbda_aut.dll
+Masuk ke Python Script (C:\Users\RAMA\AppData\Local\Programs\Python)
+INSTALL OPENOPC: pip3 install OpenOPC-Python3x
+pip install python-socketio
+pip install websocket-client
+pip3 install requests

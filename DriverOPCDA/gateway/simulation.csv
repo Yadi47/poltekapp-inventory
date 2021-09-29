@@ -1,0 +1,86 @@
+# OPC Server - Alias CSV File
+# Format as follows:
+# GroupName,AliasName,ItemPath,DataType,ReadOnly,PollAlways,UpdateRate,ScalingType,ScalingOption1,ScalingOption2,ScalingOption3,ScalingOption4,ScalingOption5,RegisterInitialValue,EventEnabled,EventSource,EventCategory,EventSeverity,EventMessage,TriggerType,TimestampType
+# 
+# For example:
+# MyGroup1,MyAlias1,Plc1.4:1001,3,1,1,500
+# MyGroup1,MyAlias2,Plc1.5:1001,2,0,0,1000,1,100,0,100,0,2,,1,Alias,10000,1,Event Message,0,0
+# MyGroup2,MyAlias3,,2,0,0,0,0,,,,,,5
+# 
+# Tips:
+#      - Do not leave spaces between commas and values
+#      - All fields up to and including UpdateRate are mandatory
+#      - Consult the user's manual for valid data type enumerations
+#      - Always provide an update rate when PollAlways is 1
+#      - Aliases are case sensitive; ensure you use appropriate case
+#      - Each scaling type has its own required options (see below)
+#      - When an alias has events enabled (EventEnabled is 1):
+#           - A source and category must be provided
+#           - The import will fail if its event category does not exist
+#           - Event categories must be defined before importing the CSV file
+# 
+# ScalingType:
+#      0 - none
+#      1 - linear
+#      2 - square root
+#      3 - gain/offset
+#      4 - expression
+#      5 - calculation
+# 
+# Linear:
+#      ScalingOption1: High Raw
+#      ScalingOption2: Low Raw
+#      ScalingOption3: High Scaled
+#      ScalingOption4: Low Scaled
+#      ScalingOption5: High/Low Clamp (0 -> both disabled; 1 -> low enabled; 2 -> high enabled; 3 -> both enabled)
+# 
+# Square root:
+#      ScalingOption1: High Raw
+#      ScalingOption2: Low Raw
+#      ScalingOption3: High Scaled
+#      ScalingOption4: Low Scaled
+#      ScalingOption5: High/Low Clamp (0 -> both disabled; 1 -> low enabled; 2 -> high enabled; 3 -> both enabled)
+# 
+# Gain/offset:
+#      ScalingOption1: Gain
+#      ScalingOption2: Offset
+# 
+# Expression
+#      ScalingOption1: Input
+#      ScalingOption2: Output
+# 
+# Calculation
+#      ScalingOption1: Calculation
+# 
+TS-01.T301,"Free Water Level",Random.Real4,0,0,0,0,0,,,,,,,0,Alias,0,1,,0,0
+TS-01.T301,"Observed Density",Random.Real4,0,0,0,0,0,,,,,,,0,Alias,0,1,,0,0
+TS-01.T301,"Product Level",Random.Int4,0,0,0,0,0,,,,,,,0,Alias,0,1,,0,0
+TS-01.T301,"Product Mass",Random.Real8,0,0,0,0,0,,,,,,,0,Alias,0,1,,0,0
+TS-01.T301,"Product Name",Random.String,0,0,0,0,0,,,,,,,0,Alias,0,1,,0,0
+TS-01.T301,"Product Temperature",Random.Real8,0,0,0,0,0,,,,,,,0,Alias,0,1,,0,0
+TS-01.T301,"Tank Name",,8,0,0,0,0,,,,,,"TANK 01",0,Alias,0,1,,0,0
+TS-01.T301,"Total Observed Volume",Random.Int4,0,0,0,0,0,,,,,,,0,Alias,0,1,,0,0
+TS-01.T302,"Free Water Level",Random.Real4,0,0,0,0,0,,,,,,,0,Alias,0,1,,0,0
+TS-01.T302,"Observed Density",Random.Real4,0,0,0,0,0,,,,,,,0,Alias,0,1,,0,0
+TS-01.T302,"Product Level",Random.Int4,0,0,0,0,0,,,,,,,0,Alias,0,1,,0,0
+TS-01.T302,"Product Mass",Random.Real8,0,0,0,0,0,,,,,,,0,Alias,0,1,,0,0
+TS-01.T302,"Product Name",Random.String,0,0,0,0,0,,,,,,,0,Alias,0,1,,0,0
+TS-01.T302,"Product Temperature",Random.Real8,0,0,0,0,0,,,,,,,0,Alias,0,1,,0,0
+TS-01.T302,"Tank Name",,8,0,0,0,0,,,,,,"TANK 01",0,Alias,0,1,,0,0
+TS-01.T302,"Total Observed Volume",Random.Int4,0,0,0,0,0,,,,,,,0,Alias,0,1,,0,0
+TS-01.T303,"Free Water Level",Random.Real4,0,0,0,0,0,,,,,,,0,Alias,0,1,,0,0
+TS-01.T303,"Observed Density",Random.Real4,0,0,0,0,0,,,,,,,0,Alias,0,1,,0,0
+TS-01.T303,"Product Level",Random.Int4,0,0,0,0,0,,,,,,,0,Alias,0,1,,0,0
+TS-01.T303,"Product Mass",Random.Real8,0,0,0,0,0,,,,,,,0,Alias,0,1,,0,0
+TS-01.T303,"Product Name",Random.String,0,0,0,0,0,,,,,,,0,Alias,0,1,,0,0
+TS-01.T303,"Product Temperature",Random.Real8,0,0,0,0,0,,,,,,,0,Alias,0,1,,0,0
+TS-01.T303,"Tank Name",,8,0,0,0,0,,,,,,"TANK 01",0,Alias,0,1,,0,0
+TS-01.T303,"Total Observed Volume",Random.Int4,0,0,0,0,0,,,,,,,0,Alias,0,1,,0,0
+TS-01.T304,"Free Water Level",Random.Real4,0,0,0,0,0,,,,,,,0,Alias,0,1,,0,0
+TS-01.T304,"Observed Density",Random.Real4,0,0,0,0,0,,,,,,,0,Alias,0,1,,0,0
+TS-01.T304,"Product Level",Random.Int4,0,0,0,0,0,,,,,,,0,Alias,0,1,,0,0
+TS-01.T304,"Product Mass",Random.Real8,0,0,0,0,0,,,,,,,0,Alias,0,1,,0,0
+TS-01.T304,"Product Name",Random.String,0,0,0,0,0,,,,,,,0,Alias,0,1,,0,0
+TS-01.T304,"Product Temperature",Random.Real8,0,0,0,0,0,,,,,,,0,Alias,0,1,,0,0
+TS-01.T304,"Tank Name",,8,0,0,0,0,,,,,,"TANK 01",0,Alias,0,1,,0,0
+TS-01.T304,"Total Observed Volume",Random.Int4,0,0,0,0,0,,,,,,,0,Alias,0,1,,0,0

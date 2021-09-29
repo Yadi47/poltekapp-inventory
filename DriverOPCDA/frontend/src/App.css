@@ -1,0 +1,11 @@
+.link-active{
+  background: rgb(39, 155, 146) !important;
+  background: linear-gradient(0deg, rgba(39, 155, 146, 1) 0%, rgba(74, 177, 130, 1) 100%) !important;
+  /* background: rgb(39, 155, 146) !important; */
+  /* background: linear-gradient(0deg, rgba(39, 155, 146, 1) 12%, rgba(74, 177, 130, 1) 50%) !important; */
+  color:white !important;
+}
+.link-active .MuiListItemIcon-root {
+  color:white !important;
+}
+
